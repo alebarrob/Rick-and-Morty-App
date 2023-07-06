@@ -7,9 +7,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import barrera.alejandro.rickandmortyapp.core.navigation.NavGraph
+import barrera.alejandro.rickandmortyapp.navigation.NavGraph
 import barrera.alejandro.rickandmortyapp.core.presentation.components.Background
+import barrera.alejandro.rickandmortyapp.core.presentation.components.BottomBar
+import barrera.alejandro.rickandmortyapp.core.presentation.components.TopBar
+import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.*
 import barrera.alejandro.rickandmortyapp.ui.theme.RickAndMortyAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +24,32 @@ class MainActivity : ComponentActivity() {
             RickAndMortyAppTheme {
 
                 val navController = rememberNavController()
+                val currentDestination =
+                    navController.currentBackStackEntryAsState().value?.destination
 
                 Box {
                     Background()
                     Scaffold(
+                        topBar = {
+                            TopBar(
+                                onBackClick = {
+                                    navController.navigateUp()
+                                },
+                                topBarState = true // TODO()
+                            )
+                        },
+                        bottomBar = {
+                            BottomBar(
+                                onItemClick = { screen ->
+                                    navController.navigate(screen.route) {
+                                        popUpTo(ExploreScreen.route) { inclusive = false }
+                                        launchSingleTop = true
+                                    }
+                                },
+                                bottomBarState = true, // TODO()
+                                currentDestination = currentDestination
+                            )
+                        },
                         containerColor = Color.Transparent
                     ) { paddingValues ->
                         NavGraph(

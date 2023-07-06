@@ -9,9 +9,10 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val ColorScheme = lightColorScheme(
     background = White100,
-    primary = Green40,
-    secondary = Yellow40,
-    tertiary = Blue40
+    primary = Green20,
+    secondary = Blue20,
+    onSecondary = White100,
+    tertiary = Yellow20
 )
 
 @Composable
@@ -19,7 +20,7 @@ fun RickAndMortyAppTheme(content: @Composable () -> Unit) {
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
-        systemUiController.setSystemBarsColor(color = Green80)
+        systemUiController.setSystemBarsColor(color = Blue40)
     }
 
     CompositionLocalProvider(LocalSpacing provides Dimensions()) {

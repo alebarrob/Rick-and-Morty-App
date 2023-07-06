@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Theme.RickAndMortyApp" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:colorPrimary">@color/green_800</item>
+        <item name="android:colorPrimary">@color/blue_400</item>
     </style>
 </resources>

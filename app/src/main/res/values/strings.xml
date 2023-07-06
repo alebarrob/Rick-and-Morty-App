@@ -1,3 +1,10 @@
 <resources>
+    <!-- Core -->
     <string name="app_name">Rick and Morty App</string>
+    <string name="background_description">Background image</string>
+    <string name="back_icon_description">Go back</string>
+    <string name="explore_label_text">EXPLORE</string>
+    <string name="explore_icon_description">Explore</string>
+    <string name="about_me_label_text">ABOUT ME</string>
+    <string name="about_me_icon_description">About me</string>
 </resources>
