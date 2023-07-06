@@ -31,8 +31,8 @@ fun TopBar(
             navigationIcon = {
                 IconButton(onClick = onBackClick) {
                     Icon(
-                        Icons.Filled.ArrowBack,
-                        stringResource(id = R.string.back_icon_description)
+                        imageVector = Icons.Filled.ArrowBack,
+                        contentDescription = stringResource(id = R.string.back_icon_description)
                     )
                 }
             },

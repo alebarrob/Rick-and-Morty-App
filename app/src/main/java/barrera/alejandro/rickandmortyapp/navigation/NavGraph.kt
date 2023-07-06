@@ -26,7 +26,7 @@ fun NavGraph(
             DetailScreen()
         }
         composable(route = AboutMeScreen.route) {
-            AboutMeScreen()
+            AboutMeScreen(paddingValues = paddingValues)
         }
     }
 }

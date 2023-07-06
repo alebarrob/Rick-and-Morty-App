@@ -1,6 +1,8 @@
 package barrera.alejandro.rickandmortyapp.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -37,10 +39,15 @@ val Typography = Typography(
                 lineHeight = 24.sp,
                 letterSpacing = 0.5.sp
         ),
-        labelSmall = TextStyle(
+        labelMedium = TextStyle(
                 fontFamily = fontFamilyLato,
-                fontSize = 11.sp,
-                lineHeight = 16.sp,
-                letterSpacing = 0.5.sp
+                fontSize = 12.sp,
+                lineHeight = 24.sp,
+                letterSpacing = 0.5.sp,
+                shadow = Shadow(
+                        color = Black100,
+                        offset = Offset(1f, 1f),
+                        blurRadius = 1f
+                )
         )
 )

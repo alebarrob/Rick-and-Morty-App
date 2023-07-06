@@ -3,6 +3,7 @@ package barrera.alejandro.rickandmortyapp.core.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -23,6 +24,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             RickAndMortyAppTheme {
 
+                val viewModel: CoreViewModel by viewModels()
+                val state = viewModel.state
+
                 val navController = rememberNavController()
                 val currentDestination =
                     navController.currentBackStackEntryAsState().value?.destination
@@ -35,7 +39,7 @@ class MainActivity : ComponentActivity() {
                                 onBackClick = {
                                     navController.navigateUp()
                                 },
-                                topBarState = true // TODO()
+                                topBarState = state.isTopBarVisible
                             )
                         },
                         bottomBar = {
@@ -46,7 +50,7 @@ class MainActivity : ComponentActivity() {
                                         launchSingleTop = true
                                     }
                                 },
-                                bottomBarState = true, // TODO()
+                                bottomBarState = state.isBottomBarVisible,
                                 currentDestination = currentDestination
                             )
                         },
