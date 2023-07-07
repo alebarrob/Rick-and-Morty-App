@@ -1,7 +1,6 @@
-package barrera.alejandro.rickandmortyapp.feature_explore.domain.model
+package barrera.alejandro.rickandmortyapp.feature_explore.presentation
 
-data class Character(
-    val id: Int,
+data class DetailState(
     val name: String,
     val status: String,
     val species: String,

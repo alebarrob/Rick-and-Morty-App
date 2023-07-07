@@ -11,7 +11,7 @@ fun UiController(
     currentDestination: NavDestination?
 ) {
     when (currentDestination?.route) {
-        "detail" -> {
+        "detail" + "/{name}/{status}/{species}/{origin}/{location}?imageUrl={imageUrl}" -> {
             viewModel.onEvent(CoreEvent.HideBottomBar)
             viewModel.onEvent(CoreEvent.ShowTopBar)
         }

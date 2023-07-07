@@ -12,12 +12,14 @@ import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import barrera.alejandro.rickandmortyapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(
+    modifier: Modifier = Modifier,
     onBackClick: () -> Unit,
     topBarState: Boolean
 ) {
@@ -27,6 +29,7 @@ fun TopBar(
         exit = slideOutVertically(targetOffsetY = { -it })
     ) {
         TopAppBar(
+            modifier = modifier,
             title = {  },
             navigationIcon = {
                 IconButton(onClick = onBackClick) {
@@ -36,7 +39,7 @@ fun TopBar(
                     )
                 }
             },
-            colors = TopAppBarDefaults.smallTopAppBarColors(
+            colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = colorScheme.secondary,
                 navigationIconContentColor = colorScheme.onSecondary
             )

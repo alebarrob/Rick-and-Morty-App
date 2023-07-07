@@ -8,7 +8,18 @@
     <string name="about_me_label_text">ABOUT ME</string>
     <string name="about_me_icon_description">About me icon</string>
 
+    <!-- Explore -->
+    <string name="welcome_text">Choose your favorite Rick and Morty character!</string>
+    <string name="character_image_description">Character image</string>
+    <string name="light_indicator_image_description">Light indicator image</string>
+    <string name="search_hint">Search</string>
+
+    <!-- Detail -->
+    <string name="last_known_location_text">Last known location:</string>
+    <string name="origin_text">Origin:</string>
+
     <!-- About me -->
     <string name="about_me_message">Hello! My name is Alejandro Barrera and I am the creator of this Rick and Morty demo application. To make it, I worked with most of the libraries and architecture patterns used in modern Android development: Retrofit, Room, Paging, Hilt, Jetpack Compose, MVVM and Clean Architecture. It was very interesting to make this demo. I hope you like it! &#x1F604;</string>
     <string name="ufo_icon_description">Ufo icon</string>
+
 </resources>

@@ -9,6 +9,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val ColorScheme = lightColorScheme(
     background = White100,
+    onBackground = Black20,
     primary = Green20,
     secondary = Blue20,
     onSecondary = White100,

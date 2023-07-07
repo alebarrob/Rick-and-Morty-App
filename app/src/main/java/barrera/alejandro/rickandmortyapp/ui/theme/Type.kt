@@ -33,9 +33,34 @@ private val fontFamilyCreepster = FontFamily(
 )
 
 val Typography = Typography(
+        displayMedium = TextStyle(
+                color = White100,
+                fontFamily = fontFamilyCreepster,
+                fontSize = 28.sp,
+                lineHeight = 32.sp,
+                letterSpacing = 0.5.sp,
+                shadow = Shadow(
+                        color = Black20,
+                        offset = Offset(3f, 3f),
+                        blurRadius = 30f
+                )
+        ),
+        bodySmall = TextStyle(
+                fontFamily = fontFamilyLato,
+                fontSize = 13.sp,
+                lineHeight = 24.sp,
+                letterSpacing = 0.5.sp
+        ),
         bodyMedium = TextStyle(
                 fontFamily = fontFamilyLato,
                 fontSize = 16.sp,
+                lineHeight = 24.sp,
+                letterSpacing = 0.5.sp
+        ),
+        bodyLarge = TextStyle(
+                fontFamily = fontFamilyLato,
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp,
                 lineHeight = 24.sp,
                 letterSpacing = 0.5.sp
         ),
@@ -45,7 +70,7 @@ val Typography = Typography(
                 lineHeight = 24.sp,
                 letterSpacing = 0.5.sp,
                 shadow = Shadow(
-                        color = Black100,
+                        color = Black20,
                         offset = Offset(1f, 1f),
                         blurRadius = 1f
                 )

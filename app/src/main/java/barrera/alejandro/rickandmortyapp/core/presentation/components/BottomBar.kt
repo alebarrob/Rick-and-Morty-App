@@ -23,7 +23,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen
 import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.AboutMeScreen
 import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.ExploreScreen
-import barrera.alejandro.rickandmortyapp.ui.theme.Black100
+import barrera.alejandro.rickandmortyapp.ui.theme.Black20
 
 @Composable
 fun BottomBar(
@@ -74,7 +74,7 @@ fun BottomBar(
                     colors = NavigationBarItemDefaults.colors(
                         selectedTextColor = MaterialTheme.colorScheme.onSecondary,
                         indicatorColor = MaterialTheme.colorScheme.background,
-                        unselectedIconColor = Black100,
+                        unselectedIconColor = Black20,
                         unselectedTextColor = MaterialTheme.colorScheme.onSecondary
                     ),
                     selected = screenIsActive ?: false,

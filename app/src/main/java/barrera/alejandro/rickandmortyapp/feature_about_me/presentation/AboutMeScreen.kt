@@ -31,7 +31,7 @@ fun AboutMeScreen(
     val spacing = LocalSpacing.current
 
     AdaptableColumn(
-        modifier = modifier.padding(all = 10.dp),
+        modifier = modifier.padding(all = spacing.spaceSmall),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         bottomBarPadding = paddingValues.calculateBottomPadding()

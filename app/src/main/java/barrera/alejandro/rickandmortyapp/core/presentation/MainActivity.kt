@@ -5,20 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import barrera.alejandro.rickandmortyapp.navigation.NavGraph
 import barrera.alejandro.rickandmortyapp.core.presentation.components.Background
 import barrera.alejandro.rickandmortyapp.core.presentation.components.BottomBar
 import barrera.alejandro.rickandmortyapp.core.presentation.components.TopBar
-import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.*
+import barrera.alejandro.rickandmortyapp.core.presentation.components.UiController
+import barrera.alejandro.rickandmortyapp.navigation.NavGraph
+import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.ExploreScreen
 import barrera.alejandro.rickandmortyapp.ui.theme.RickAndMortyAppTheme
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -30,6 +29,11 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val currentDestination =
                     navController.currentBackStackEntryAsState().value?.destination
+
+                UiController(
+                    viewModel = viewModel,
+                    currentDestination = currentDestination
+                )
 
                 Box {
                     Background()
