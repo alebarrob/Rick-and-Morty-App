@@ -14,12 +14,15 @@ class CoreViewModel : ViewModel() {
             is CoreEvent.ShowTopBar -> {
                 state.copy(isTopBarVisible = true)
             }
+
             is CoreEvent.HideTopBar -> {
                 state.copy(isTopBarVisible = false)
             }
+
             is CoreEvent.ShowBottomBar -> {
                 state.copy(isBottomBarVisible = true)
             }
+
             is CoreEvent.HideBottomBar -> {
                 state.copy(isBottomBarVisible = false)
             }

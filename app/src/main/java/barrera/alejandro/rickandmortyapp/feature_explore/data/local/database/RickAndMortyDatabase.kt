@@ -7,5 +7,5 @@ import barrera.alejandro.rickandmortyapp.feature_explore.data.local.entity.Chara
 
 @Database(entities = [CharacterEntity::class], version = 1, exportSchema = false)
 abstract class RickAndMortyDatabase : RoomDatabase() {
-    abstract fun characterDao() : CharacterDao
+    abstract fun characterDao(): CharacterDao
 }

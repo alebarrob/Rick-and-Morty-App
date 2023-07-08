@@ -15,6 +15,7 @@ fun UiController(
             viewModel.onEvent(CoreEvent.HideBottomBar)
             viewModel.onEvent(CoreEvent.ShowTopBar)
         }
+
         else -> {
             viewModel.onEvent(CoreEvent.ShowBottomBar)
             viewModel.onEvent(CoreEvent.HideTopBar)

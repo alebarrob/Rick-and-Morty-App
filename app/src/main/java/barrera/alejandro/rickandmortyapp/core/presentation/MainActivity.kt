@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
                 Box {
                     Background()
                     Scaffold(
+                        containerColor = Color.Transparent,
                         topBar = {
                             TopBar(
                                 onBackClick = {
@@ -59,8 +60,7 @@ class MainActivity : ComponentActivity() {
                                 bottomBarState = state.isBottomBarVisible,
                                 currentDestination = currentDestination
                             )
-                        },
-                        containerColor = Color.Transparent
+                        }
                     ) { paddingValues ->
                         NavGraph(
                             navController = navController,

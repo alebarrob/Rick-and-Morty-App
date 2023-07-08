@@ -28,6 +28,7 @@ class ExploreViewModel @Inject constructor(
             is ExploreEvent.OnQueryChange -> {
                 state = state.copy(query = event.query)
             }
+
             is ExploreEvent.OnSearch -> {
                 viewModelScope.launch {
                     state = state.copy(

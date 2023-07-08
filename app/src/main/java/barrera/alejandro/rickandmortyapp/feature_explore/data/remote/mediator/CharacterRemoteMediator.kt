@@ -15,7 +15,7 @@ class CharacterRemoteMediator(
     private val rickAndMortyDatabase: RickAndMortyDatabase,
     private val rickAndMortyApi: RickAndMortyApi,
     private val characterName: String
-): RemoteMediator<Int, CharacterEntity>() {
+) : RemoteMediator<Int, CharacterEntity>() {
 
     override suspend fun load(
         loadType: LoadType,

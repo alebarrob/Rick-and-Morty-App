@@ -30,7 +30,7 @@ fun TopBar(
     ) {
         TopAppBar(
             modifier = modifier,
-            title = {  },
+            title = { },
             navigationIcon = {
                 IconButton(onClick = onBackClick) {
                     Icon(
