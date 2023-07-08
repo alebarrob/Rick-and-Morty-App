@@ -16,7 +16,9 @@ import barrera.alejandro.rickandmortyapp.core.presentation.components.UiControll
 import barrera.alejandro.rickandmortyapp.navigation.NavGraph
 import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.ExploreScreen
 import barrera.alejandro.rickandmortyapp.ui.theme.RickAndMortyAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

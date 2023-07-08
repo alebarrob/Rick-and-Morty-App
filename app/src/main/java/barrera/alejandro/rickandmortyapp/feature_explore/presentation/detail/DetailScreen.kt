@@ -1,4 +1,4 @@
-package barrera.alejandro.rickandmortyapp.feature_explore.presentation
+package barrera.alejandro.rickandmortyapp.feature_explore.presentation.detail
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import barrera.alejandro.rickandmortyapp.core.presentation.components.AdaptableC
 import barrera.alejandro.rickandmortyapp.feature_explore.presentation.components.CharacterBasicInfo
 import barrera.alejandro.rickandmortyapp.ui.theme.Black20
 import barrera.alejandro.rickandmortyapp.ui.theme.LocalSpacing
+import barrera.alejandro.rickandmortyapp.ui.theme.TransparentYellow80
 import barrera.alejandro.rickandmortyapp.ui.theme.Typography
-import barrera.alejandro.rickandmortyapp.ui.theme.Yellow80
 import coil.compose.AsyncImage
 
 @Composable
@@ -41,7 +41,7 @@ fun DetailScreen(
     val state = viewModel.state
 
     AdaptableColumn(
-        modifier = modifier.background(Yellow80),
+        modifier = modifier.background(TransparentYellow80),
         verticalArrangement = Arrangement.spacedBy(
             space = spacing.spaceMedium,
             alignment = Alignment.Top
@@ -105,8 +105,8 @@ fun CharacterImageCard(
                 contentDescription = stringResource(id = R.string.character_image_description),
                 modifier = Modifier
                     .size(225.dp),
-                placeholder = painterResource(id = R.drawable.image_placeholder),
-                error = painterResource(id = R.drawable.image_placeholder),
+                placeholder = painterResource(id = R.drawable.placeholder),
+                error = painterResource(id = R.drawable.placeholder),
                 contentScale = ContentScale.FillBounds
             )
         }

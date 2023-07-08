@@ -8,8 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import barrera.alejandro.rickandmortyapp.feature_about_me.presentation.AboutMeScreen
-import barrera.alejandro.rickandmortyapp.feature_explore.presentation.DetailScreen
-import barrera.alejandro.rickandmortyapp.feature_explore.presentation.ExploreScreen
+import barrera.alejandro.rickandmortyapp.feature_explore.presentation.detail.DetailScreen
+import barrera.alejandro.rickandmortyapp.feature_explore.presentation.explore.ExploreScreen
 import barrera.alejandro.rickandmortyapp.navigation.NavigationScreen.*
 
 @Composable

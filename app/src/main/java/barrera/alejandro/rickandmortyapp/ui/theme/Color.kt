@@ -2,8 +2,9 @@ package barrera.alejandro.rickandmortyapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-
 val White100 = Color(0xFFFDFFFC)
+
+val TransparentYellow80 = Color(0xE6FAF693)
 
 val Black80 = Color(0xFF5C5A5A)
 val Green80 = Color(0xFF66AC6E)

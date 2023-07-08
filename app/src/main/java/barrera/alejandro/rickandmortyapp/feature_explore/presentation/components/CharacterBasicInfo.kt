@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextOverflow
 import barrera.alejandro.rickandmortyapp.R
 import barrera.alejandro.rickandmortyapp.ui.theme.LocalSpacing
 import barrera.alejandro.rickandmortyapp.ui.theme.Typography
@@ -50,7 +51,9 @@ fun CharacterBasicInfo(
             )
             Text(
                 text = "$status - $species",
-                style = statusAndSpeciesStyle
+                style = statusAndSpeciesStyle,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }

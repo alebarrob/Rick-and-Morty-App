@@ -1,4 +1,4 @@
-package barrera.alejandro.rickandmortyapp.feature_explore.presentation
+package barrera.alejandro.rickandmortyapp.feature_explore.presentation.detail
 
 data class DetailState(
     val name: String,
