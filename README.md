@@ -1,6 +1,6 @@
 # Rick and Morty App
 
-This application provides information on all the characters in the Rick and Morty series and is an example of modern Android development using Retrofit, Room, Paging, Hilt, Jetpack Compose, MVVM and Clean Architecture.
+This application provides information about all the characters in the Rick and Morty series and is an example of modern Android development using Retrofit, Room, Paging, Hilt, Jetpack Compose, MVVM and Clean Architecture.
 
 # Demo
 
