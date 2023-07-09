@@ -4,4 +4,4 @@ This application provides information about all the characters in the Rick and M
 
 # Demo
 
-https://github.com/alebarrob/Rick-and-Morty-App/assets/97750427/d05fb6d2-adc1-4cae-89f7-e7a07c04a7ef
+https://github.com/alebarrob/Rick-and-Morty-App/assets/97750427/4bfa2f30-57c6-4d3a-829a-d4623543d79d
