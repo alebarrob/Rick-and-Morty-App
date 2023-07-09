@@ -42,7 +42,7 @@ class CharacterRemoteMediator(
 
             rickAndMortyDatabase.withTransaction {
                 if (loadType == LoadType.REFRESH) {
-                    rickAndMortyDatabase.characterDao().clearAll()
+                    rickAndMortyDatabase.characterDao().clearAllCharacters()
                 }
                 val characterEntities = response.results.map { it.toCharacterEntity() }
 

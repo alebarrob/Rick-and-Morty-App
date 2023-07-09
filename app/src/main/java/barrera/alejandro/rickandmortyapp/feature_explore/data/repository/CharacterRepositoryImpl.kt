@@ -21,7 +21,7 @@ class CharacterRepositoryImpl(
 
     @OptIn(ExperimentalPagingApi::class)
     override fun getCharactersPagingData(characterName: String): Flow<PagingData<Character>> {
-        return Pager(
+        val pager = Pager(
             config = PagingConfig(pageSize = 20),
             remoteMediator = CharacterRemoteMediator(
                 rickAndMortyDatabase = rickAndMortyDatabase,
@@ -32,6 +32,8 @@ class CharacterRepositoryImpl(
                 rickAndMortyDatabase.characterDao().pagingSource()
             }
         )
+
+        return pager
             .flow
             .map { pagingData ->
                 pagingData.map { it.toCharacter() }

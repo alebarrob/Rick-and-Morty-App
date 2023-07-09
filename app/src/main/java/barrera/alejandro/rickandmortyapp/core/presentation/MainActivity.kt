@@ -3,10 +3,11 @@ package barrera.alejandro.rickandmortyapp.core.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import barrera.alejandro.rickandmortyapp.core.presentation.components.Background
@@ -24,51 +25,54 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickAndMortyAppTheme {
+                RickAndMortyApp()
+            }
+        }
+    }
+}
 
-                val viewModel: CoreViewModel by viewModels()
-                val state = viewModel.state
+@Composable
+fun RickAndMortyApp(viewModel: CoreViewModel = viewModel()) {
+    val state = viewModel.state
 
-                val navController = rememberNavController()
-                val currentDestination =
-                    navController.currentBackStackEntryAsState().value?.destination
+    val navController = rememberNavController()
+    val currentDestination =
+        navController.currentBackStackEntryAsState().value?.destination
 
-                UiController(
-                    viewModel = viewModel,
+    UiController(
+        viewModel = viewModel,
+        currentDestination = currentDestination
+    )
+
+    Box {
+        Background()
+        Scaffold(
+            containerColor = Color.Transparent,
+            topBar = {
+                TopBar(
+                    onBackClick = {
+                        navController.navigateUp()
+                    },
+                    topBarState = state.isTopBarVisible
+                )
+            },
+            bottomBar = {
+                BottomBar(
+                    onItemClick = { screen ->
+                        navController.navigate(screen.route) {
+                            popUpTo(ExploreScreen.route) { inclusive = false }
+                            launchSingleTop = true
+                        }
+                    },
+                    bottomBarState = state.isBottomBarVisible,
                     currentDestination = currentDestination
                 )
-
-                Box {
-                    Background()
-                    Scaffold(
-                        containerColor = Color.Transparent,
-                        topBar = {
-                            TopBar(
-                                onBackClick = {
-                                    navController.navigateUp()
-                                },
-                                topBarState = state.isTopBarVisible
-                            )
-                        },
-                        bottomBar = {
-                            BottomBar(
-                                onItemClick = { screen ->
-                                    navController.navigate(screen.route) {
-                                        popUpTo(ExploreScreen.route) { inclusive = false }
-                                        launchSingleTop = true
-                                    }
-                                },
-                                bottomBarState = state.isBottomBarVisible,
-                                currentDestination = currentDestination
-                            )
-                        }
-                    ) { paddingValues ->
-                        NavGraph(
-                            navController = navController,
-                            paddingValues = paddingValues
-                        )
-                    }
-                }
             }
+        ) { paddingValues ->
+            NavGraph(
+                navController = navController,
+                paddingValues = paddingValues
+            )
         }
     }
 }
